@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Websocket Client</title>
+  </head>
+  <style>
+  h1 {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+  }
+  </style>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+    $(function () {
+      var socket = io();
+      socket.on('now_playing', function(msg){
+        var track = msg.split("|");
+        var display_duration = track[3] * 1000;
+        $('#now_playing').text(track[1] + ' by ' + track[0]);
+        $('#now_playing_pack').attr('src', 'http://ichef.bbci.co.uk/images/ic/208x208/' + track[2] + '.jpg');
+
+        // setInterval(function(){
+        //   $('#now_playing').text('...');
+        //   $('#now_playing_pack').attr('src', 'pack.jpg');
+        // }, display_duration);
+      });
+    });
+  </script>
+  <body>
+    <img id="now_playing_pack" src="pack.jpg" width="200px" height="200px"/>
+    <h1><span id="now_playing">...</span></h1>
+    
+  </body>
+</html>
