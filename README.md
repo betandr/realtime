@@ -5,6 +5,16 @@
 node index.js 
 ```
 
+### Client
+```
+http://localhost:3000/client
+```
+
+### Console
+```
+Console: http://localhost:3000/
+```
+
 ## Messages
 ```
 Ride|All I Want|p02cbpwd|235
