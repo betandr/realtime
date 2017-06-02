@@ -12,7 +12,7 @@ http://localhost:3000/client
 
 ### Console
 ```
-Console: http://localhost:3000/
+http://localhost:3000/
 ```
 
 ## Messages
